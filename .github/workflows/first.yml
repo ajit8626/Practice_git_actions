@@ -1,0 +1,15 @@
+name: shell commands workflow
+
+on: 
+  - push
+
+jobs:
+  run-on-shell-job:
+    run-on: ubuntu-latest
+    steps:
+      - name: shell commands
+        run: echo "Hell-O world"
+      - name: multiline commands
+        run: |
+          node -v
+          npm -v
