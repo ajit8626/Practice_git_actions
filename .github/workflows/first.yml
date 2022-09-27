@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: shell commands
-        run: echo "Hell-O world"
+        run: echho "Hell-O world"
       - name: multiline commands
         run: |
           node -v
