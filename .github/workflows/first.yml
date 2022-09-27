@@ -27,3 +27,10 @@ jobs:
       - name: get bash pwd
         run: pwd
         shell: bash
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout action 
+        uses: actions/checkout@v3
+        run: |
+          ls -a
