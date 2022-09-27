@@ -19,6 +19,7 @@ jobs:
           print(platform.processor())
         shell: python
   runs-on-windows:
+    needs: ["run-on-shell-job"]
     runs-on: windows-latest
     steps:
       - name: get location
