@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Print
         id: P
-        run: echo 2+3
+        run: echho 2+3
       - name: if failure
-        run: echo ${{ steps.P.outputs }}
+        run: echo "Run Successfully"
         if: failure()
