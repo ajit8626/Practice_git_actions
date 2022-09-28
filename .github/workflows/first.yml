@@ -6,9 +6,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        run: ['run1', 'run2']
+        run: ['run1', 'run2]
     steps:
-      - name: matrix run1
-        run: echho Run ${{ matrix.run[0] }}
-      - name: matrix run2
-        run: echo Run ${{ matrix.run[1] }}
+      - name: matrix run
+        run: echo Run ${{ matrix.run }}
