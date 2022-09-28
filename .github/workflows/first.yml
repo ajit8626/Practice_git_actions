@@ -3,7 +3,7 @@ name: shell commands workflow
 on: 
   push:
     branches:
-      - "master"
+      - "main"
   
 jobs:
   run-on-shell-job:
