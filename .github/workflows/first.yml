@@ -31,7 +31,6 @@ jobs:
         shell: bash
   run-github-actions:
     runs-on: ubuntu-latest
-    needs: ["run-on-shell-job"]
     steps:
       - name: checkout action 
         uses: actions/checkout@v3
