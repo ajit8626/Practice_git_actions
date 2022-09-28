@@ -2,7 +2,7 @@ name: shell commands workflow
 
 on: 
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "*/2 * * * *"
   push:
   
 jobs:
@@ -15,25 +15,3 @@ jobs:
         run: |
           node -v
           npm -v
-      - name: python commands
-        run: |
-          import platform
-          print(platform.processor())
-        shell: python
-  runs-on-windows:
-    needs: ["run-on-shell-job"]
-    runs-on: windows-latest
-    steps:
-      - name: get location
-        run: Get-Location
-      - name: get bash pwd
-        run: pwd
-        shell: bash
-  run-github-actions:
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout action 
-        uses: actions/checkout@v3
-      - name: after checkout
-        run: |
-          ls -a
