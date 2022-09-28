@@ -8,5 +8,7 @@ jobs:
       matrix:
         run: ['run1', 'run2']
     steps:
-      - name: matrix run
-        run: echo Run ${{ matrix.run }}
+      - name: matrix run1
+        run: echho Run ${{ matrix.run[0] }}
+      - name: matrix run2
+        run: echho Run ${{ matrix.run[1] }}
