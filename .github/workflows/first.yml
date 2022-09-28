@@ -10,5 +10,5 @@ jobs:
         id: P
         run: echo 2+3
       - name: if failure
-        run: echo ${{ functions.P.output }}
+        run: echo ${{ steps.P.outputs }}
         if: failure()
