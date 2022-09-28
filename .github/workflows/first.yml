@@ -7,4 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Use Git Token
-        run: echo "Token - ${{ secrets.GITHUB_TOKEN}}"
+        run: |
+        echo "Token - ${{ secrets.GITHUB_TOKEN }}"
+        git init
+        git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
+        git fetch
+        git branch --set-upstream-to=origin/master
+        git pull
+        ls -a
