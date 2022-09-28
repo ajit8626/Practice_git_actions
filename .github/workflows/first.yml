@@ -11,4 +11,4 @@ jobs:
       - name: matrix run1
         run: echho Run ${{ matrix.run[0] }}
       - name: matrix run2
-        run: echho Run ${{ matrix.run[1] }}
+        run: echo Run ${{ matrix.run[1] }}
