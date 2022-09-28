@@ -1,8 +1,10 @@
 name: shell commands workflow
 
 on: 
-  - push
-
+  schedule:
+    - cron: "5 * * * *"
+  push:
+  
 jobs:
   run-on-shell-job:
     runs-on: ubuntu-latest
