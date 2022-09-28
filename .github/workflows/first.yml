@@ -4,7 +4,7 @@ jobs:
   matrix-simple:
     runs-on: ubuntu-20.04
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         run: ['run1', 'run2']
     steps:
