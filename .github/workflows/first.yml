@@ -1,9 +1,9 @@
 name: shell commands workflow
 
 on: 
-  schedule:
-    - cron: "* * * * *"
   push:
+    branches:
+      - "master"
   
 jobs:
   run-on-shell-job:
