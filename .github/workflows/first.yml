@@ -1,18 +1,14 @@
-name: Greeting on variable day
+name: Pull request labeler
+on: [ pull_request_target ]
 
-on:
-  workflow_dispatch
-
-env:
-  DAY_OF_WEEK: Monday
+permissions:
+  contents: read
+  pull-requests: write
 
 jobs:
-  greeting_job:
+  triage:
     runs-on: ubuntu-latest
-    env:
-      Greeting: Hello
     steps:
-      - name: "Say Hello Mona it's Monday"
-        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
-        env:
-          First_Name: Mona
+      - uses: actions/labeler@v4
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
