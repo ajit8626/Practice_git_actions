@@ -1,15 +1,12 @@
-name: Create issue on commit
-
-on: [ push ]
-
+name: matrix strategy
+on: push
 jobs:
-  functions:
-    runs-on: ubuntu-latest
+  matrix-simple:
+    runs-on: ubuntu-20.04
+    strategy:
+      fail-fast: true
+      matrix:
+        run: ['run1', 'run2']
     steps:
-      - name: Print
-        continue-on-error: true
-        id: P
-        run: echho 2+3
-      - name: if failure
-        run: echo "Run Successfully"
-        if: ${{ failure() }}
+      - name: matrix run
+        run: echo Run ${{ matrix.run }}
