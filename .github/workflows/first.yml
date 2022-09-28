@@ -3,22 +3,12 @@ name: Create issue on commit
 on: [ push ]
 
 jobs:
-  create_issue:
+  functions:
     runs-on: ubuntu-latest
-    steps: 
-      - name: Use Git Token
-        run: |
-          echo ${{ secrets.GITHUB_TOKEN}}
-          git init
-          git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
-          git config --global user.email "my@bot.com"
-          git config --global user.name "my-bot"
-          git fetch
-          git checkout main
-          git branch --set-upstream-to=origin/main
-          git pull
-          ls -a
-          echo $RANDOM > rand.txt
-          git add -A 
-          git commit -m "added random file"
-          git push
+    steps:
+      - name: Print
+        id: P
+        run: echo 2+3
+      - name: if failure
+        run: echo ${{ functions.P.output }}
+        if: failure()
