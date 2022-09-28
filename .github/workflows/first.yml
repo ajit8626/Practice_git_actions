@@ -11,4 +11,4 @@ jobs:
         run: echho 2+3
       - name: if failure
         run: echo "Run Successfully"
-        if: failure()
+        if: ${{ failure() }}
