@@ -2,7 +2,7 @@ name: shell commands workflow
 
 on: 
   schedule:
-    - cron: "*/2 * * * *"
+    - cron: "* * * * *"
   push:
   
 jobs:
