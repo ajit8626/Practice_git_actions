@@ -6,7 +6,10 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-20.04, windows-latest, macos-latest]
-        node_version: [6, 8, latest]
+        node_version: [6, 8, 10]
+        exclude:
+          - os: ubuntu-20.04
+            node-version: 6
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/setup-node@v1
