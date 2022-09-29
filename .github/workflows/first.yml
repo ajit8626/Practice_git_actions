@@ -10,13 +10,16 @@ jobs:
         include:
           - node_version: 4
             os: ubuntu-16
+            is_ubuntu_16: "true"
         exclude:
           - node_version: 6
             os: ubuntu-latest
     runs-on: ${{ matrix.os }}
+    env:
+      IS_UBUNTU_16: ${{ matrix.is_ubuntu_16 }}
     steps:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node_version }}
-      - name: node version 
-        run: node -v    
+      - name: env check 
+        run: echo $IS_UBUNTU_16    
