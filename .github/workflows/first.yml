@@ -5,11 +5,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-        node_version: [6, 8, 10]
+        os: [ubuntu-latest, macos-latest]
+        node_version: [6, 10]
         include:
           - node_version: 4
-            os: ubuntu-16
+            os: ubuntu-latest
             is_ubuntu_16: "true"
         exclude:
           - node_version: 6
@@ -22,4 +22,4 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
       - name: env check 
-        run: echo $IS_UBUNTU_16    
+        run: echo $IS_UBUNTU_16     
