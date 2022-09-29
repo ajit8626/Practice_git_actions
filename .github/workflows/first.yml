@@ -2,11 +2,15 @@ name: matrix strategy
 on: push
 jobs:
   matrix-simple:
-    runs-on: ubuntu-20.04
     strategy:
       fail-fast: false
       matrix:
-        run: ['run1', 'run2]
+        os: [ubuntu-20.04, windows-latest, macos-latest]
+        node_version: [6, 8, latest]
+    runs-on: ${{ matrix.os }}
     steps:
-      - name: matrix run
-        run: echo Run ${{ matrix.run }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
+      - name: node version 
+        run: node -v    
