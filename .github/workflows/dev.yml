@@ -12,4 +12,6 @@ jobs:
     steps:
       - name: deploy
         run: echo ${{ secrets.sec }}
+      - name: global
+        run: echo ${{ secrets.G_TOKEN }}
         
