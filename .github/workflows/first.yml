@@ -1,5 +1,7 @@
 name: matrix strategy
-on: push
+on:
+  workflow_dispatch:
+    
 jobs:
   matrix-simple:
     strategy:
